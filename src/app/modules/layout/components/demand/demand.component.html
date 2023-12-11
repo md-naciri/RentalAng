@@ -1,0 +1,21 @@
+<form class="bg-slate-400 border mx-auto max-w-2xl rounded-lg p-4 flex justify-around">
+      <div>
+            <p>
+                  You can group by item key providing key name as a string to <b>groupBy</b> input
+            </p>
+
+            <ng-select [items]="accounts" bindLabel="name" bindValue="name" groupBy="country"
+                  [(ngModel)]="selectedAccount" [ngModelOptions]="{standalone: true}">
+                  <ng-template ng-optgroup-tmp let-item="item">
+                        {{item.country || 'Unnamed group'}}
+                  </ng-template>
+            </ng-select>
+
+            <br>
+            <!-- <small>Selected: {{selectedAccount}}</small> -->
+      </div>
+      <div class="col-xs-12 col-12 col-md-4 form-group mb-3">
+            <input type="text" placeholder="Daterangepicker" class="form-control" bsDaterangepicker>
+      </div>
+
+</form>

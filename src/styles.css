@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Smooch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius+Unicase&family=Poor+Story&display=swap');
+@import url('../node_modules/@ng-select/ng-select/themes/default.theme.css');
+
+
+
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#background-img {
+      background: linear-gradient(rgba(0, 0, 0, 0.5),
+                  rgba(0, 0, 0, 0.5)), url('../src/assets/img/hero-bg.jpg');
+      /* height: 50%; */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+}
+
+#footer-img {
+      background-image: url('../src/assets/img/footer-bg.png');
+      height: 50%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+}
+
+
+/* ********** Arrows to scroll down ********** */
+
+.arrow-1 {
+      width: 2em;
+      height: 2em;
+      background-color: transparent;
+      z-index: 80;
+      bottom: 85px;
+      position: absolute;
+      border-width: 0 0.25em 0.25em 0;
+      border-style: solid;
+      border-color: #e3b04b;
+      animation: scrolldown 1.2s ease-in-out infinite 0.15s;
+}
+
+.arrow-2 {
+      width: 2em;
+      height: 2em;
+      background-color: transparent;
+      z-index: 80;
+      bottom: 100px;
+      position: absolute;
+      border-width: 0 0.25em 0.25em 0;
+      border-style: solid;
+      border-color: #e3b04b;
+      animation: scrolldown 1.2s ease-in-out infinite;
+}
+
+.arrow {
+      left: 50%;
+      transform: translateY(0%) rotate(45deg);
+
+      opacity: 0;
+}
+
+@keyframes scrolldown {
+      0% {
+            transform: translateY(20%) rotate(45deg);
+            opacity: 0.7;
+      }
+
+      50% {
+            transform: translateY(0%) rotate(45deg);
+            opacity: 0.2;
+      }
+
+      100% {
+            transform: translateY(20%) rotate(45deg);
+            opacity: 0.7;
+      }
+}
+
+.glass-effect {
+      /* From https://css.glass */
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5.1px);
+      -webkit-backdrop-filter: blur(5.1px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* 404 page */
+.emoji-404 {
+
+      position: relative;
+      animation: mymove 2.5s infinite;
+}
+
+@keyframes mymove {
+      33% {
+            top: 0px;
+      }
+
+      66% {
+            top: 20px;
+      }
+
+      100% {
+            top: 0px
+      }
+}
+
+html,
+body {
+      min-height: 100vh;
+}
+
+body {
+      font-family: 'Poppins', sans-serif !important;
+
+}
+
+/* Angular Material */
+.mdc-text-field--filled {
+      border-radius: .3rem !important;
+
+}
+
+/* apexchart start */
+/** Apexchart **/
+.apexcharts-tooltip {
+      /** Dark mode */
+      /** Light mode */
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark {
+      box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
+      border-radius: 0.475rem;
+      border: 0 !important;
+      background: #241c51 !important;
+      color: #bbbace;
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-title {
+      background: #241c51 !important;
+      font-weight: 500;
+      color: #bbbace;
+      border-bottom: 1px solid #2b245b !important;
+}
+
+.apexcharts-tooltip .apexcharts-tooltip-title {
+      padding: 0.5rem 1rem;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light {
+      box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
+      border-radius: 0.475rem;
+      border: 0 !important;
+      background: #f5f5f5 !important;
+      color: #6b7280;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+      background: #f5f5f5 !important;
+      font-weight: 500;
+      color: #6b7280;
+      border-bottom: 1px solid #e5e7eb !important;
+}
+
+.apexcharts-tooltip .apexcharts-tooltip-title {
+      padding: 0.5rem 1rem;
+}
+
+.apexcharts-xaxistooltip {
+      /** Dark mode */
+      /** Light mode */
+}
+
+.apexcharts-xaxistooltip.apexcharts-theme-dark {
+      border-radius: 0.475rem;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+      border: 0 !important;
+      background: #241c51 !important;
+      color: #bbbace;
+}
+
+.apexcharts-xaxistooltip.apexcharts-theme-dark:before {
+      border-bottom: 0 !important;
+}
+
+.apexcharts-xaxistooltip.apexcharts-theme-dark:after {
+      border-bottom-color: #241c51 !important;
+}
+
+.apexcharts-xaxistooltip.apexcharts-theme-light {
+      border-radius: 0.475rem;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+      border: 0 !important;
+      background: #f5f5f5 !important;
+      color: #6b7280;
+}
+
+.apexcharts-xaxistooltip.apexcharts-theme-light:before {
+      border-bottom: 0 !important;
+}
+
+.apexcharts-xaxistooltip.apexcharts-theme-light:after {
+      border-bottom-color: #e5e7eb !important;
+}
+
+/* apexchart END */
+
+.auth-bg {
+      background-image: url("assets/img/bg.svg");
+      background-size: contain;
+}

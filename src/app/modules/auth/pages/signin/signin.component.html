@@ -1,0 +1,89 @@
+<!-- login form -->
+<form class="my-10 space-y-6" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="text-center">
+            <h2 class="mb-1 text-3xl font-semibold text-gray-700 dark:text-white">
+                  Hello Again <span class="text-blue-700">!</span>
+            </h2>
+            <p class="text-sm text-gray-400 dark:text-night-200">Enter your credential to access your account.</p>
+      </div>
+      <button type="button" routerLink="/dashboard"
+            class="flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 hover:bg-gray-50 dark:border-night-500 dark:bg-night-700 dark:text-night-200 dark:hover:bg-night-600">
+            <svg-icon src="assets/icons/google-logo.svg" [svgClass]="'h-6 w-6 mr-2'"> </svg-icon>
+            Log in with Google
+      </button>
+
+      <div
+            class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-gray-300 after:mt-0.5 after:flex-1 after:border-t after:border-gray-300 dark:before:border-night-500 dark:after:border-night-500">
+            <p class="mx-4 mb-2 text-center text-sm text-gray-400 dark:text-night-400">or</p>
+      </div>
+
+      <div class="space-y-3 my-4 text-left">
+            <div class="form__group">
+                  <div class="relative">
+                        <input type="text" id="email"
+                              [ngClass]="{ 'is__invalid-input': submitted && f['email'].errors }"
+                              class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-gray-900"
+                              placeholder=" " formControlName="email" />
+                        <label for="email"
+                              class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-sm text-[11px] peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-gray-500 peer-focus:text-gray-900 before:border-blue-gray-200 peer-focus:before:!border-gray-900 after:border-blue-gray-200 peer-focus:after:!border-gray-900">
+                              Email address
+                        </label>
+                  </div>
+                  <div *ngIf="submitted && f['email'].errors" class="is__invalid-error">
+                        <div *ngIf="f['email'].errors['required']">Required field</div>
+                        <div *ngIf="f['email'].errors['email']">Email must be an email address valid</div>
+                  </div>
+            </div>
+
+            <div class="form__group">
+                  <div class="relative">
+                        <input [type]="passwordTextType ? 'text' : 'password'" id="password"
+                              [ngClass]="{ 'is__invalid-input': submitted && f['email'].errors }" class="peer block"
+                              placeholder=" " formControlName="password" />
+                        <label for="password"
+                              class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-600 dark:bg-night-700 dark:text-night-200">
+                              Password
+                        </label>
+                        <span class="absolute top-2.5 right-5 cursor-pointer text-gray-400 dark:text-night-300"
+                              (click)="togglePasswordTextType()">
+                              <svg-icon [src]="
+                  !passwordTextType
+                    ? 'assets/icons/heroicons/outline/eye-off.svg'
+                    : 'assets/icons/heroicons/outline/eye.svg'
+                " [svgClass]="'h-5 w-5'">
+                              </svg-icon>
+                        </span>
+                  </div>
+                  <div *ngIf="submitted && f['password'].errors" class="is__invalid-error">
+                        <div *ngIf="f['password'].errors['required']">Required field</div>
+                  </div>
+            </div>
+      </div>
+
+      <div class="flex items-center justify-between space-x-3">
+            <div class="flex items-center">
+                  <input id="remember-me" name="remember-me" type="checkbox" />
+                  <label for="remember-me" class="ml-2 block text-sm text-gray-400 dark:text-night-200"> Remember
+                        me
+                  </label>
+            </div>
+
+            <div class="text-sm">
+                  <a routerLink="/auth/forgot-password" class="font-medium text-blue-700 hover:text-blue-500">
+                        Forgot your password?
+                  </a>
+            </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+            class="group relative mb-10 flex w-full justify-center rounded-md border border-transparent bg-blue-700 py-2 px-4 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 hover:bg-blue-600">
+            Sign in
+      </button>
+
+      <!-- Sign-up -->
+      <div class="text-sm text-gray-400 dark:text-night-200">
+            Not a Member yet? <a routerLink="/auth/sign-up" class="text-blue-700 hover:text-blue-500">Sign
+                  up</a>
+      </div>
+</form>

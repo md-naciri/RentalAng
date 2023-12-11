@@ -1,0 +1,34 @@
+<div id="background-img">
+      <!-- Navbar -->
+      <app-navbar></app-navbar>
+
+      <!-- Hero Section -->
+      <section id="hero" class="flex justify-center min-h-screen pt-2 md:pt-20">
+            <!-- items-center -->
+            <div class="container md:felx-row items-center px-6 mx-auto mt-10 space-y-0 md:space-y-0">
+                  <div class="mb-4 md:mb-32 space-y-12">
+                        <h1 class="text-2xl font-bold text-center md:text-3xl font-PoorStory text-gold text-shadow-lg">
+                              The largest rental marketplace in the world
+                        </h1>
+                  </div>
+                  <div class="mb-32 pt-14 md:pt-0 space-y-12">
+                        <p class="text-base text-center md:text-base text-white text-shadow-lg">Lorem ipsum dolor sit
+                              amet consectetur, adipisicing elit. Veniam quisquam aut eos dolorum omnis
+                              expedita,aspernatur laborum laudantium in aliquid illo porro consectetur ad et voluptas
+                              quia laboriosam a harum!</p>
+                  </div>
+            </div>
+
+            <!-- Arrow Sections -->
+            <section id="arrows">
+                  <span class="arrow arrow-1"> </span>
+                  <span class="arrow arrow-2"> </span>
+            </section>
+      </section>
+</div>
+<app-brand-slider></app-brand-slider>
+<app-family #Families></app-family>
+<app-btn [ngClass]="'bg-orange-200 rounded-lg border hover:bg-slate-800 hover:border-slate-700'" text="USERS"
+      path="users" color="blue-300">
+</app-btn>
+<app-footer></app-footer>
